@@ -1,0 +1,12 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/guycohen/Desktop/Bit_ML/linear_regression'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _createMatrix, symObjAddr: 0x0, symBinAddr: 0x100003964, symSize: 0x8C }
+  - { offsetInCU: 0x65, offset: 0x65, size: 0x8, addend: 0x0, symName: _createMatrix, symObjAddr: 0x0, symBinAddr: 0x100003964, symSize: 0x8C }
+  - { offsetInCU: 0xB7, offset: 0xB7, size: 0x8, addend: 0x0, symName: _toMatrix, symObjAddr: 0x8C, symBinAddr: 0x1000039F0, symSize: 0xA4 }
+  - { offsetInCU: 0x133, offset: 0x133, size: 0x8, addend: 0x0, symName: _show, symObjAddr: 0x130, symBinAddr: 0x100003A94, symSize: 0x1C4 }
+  - { offsetInCU: 0x1E3, offset: 0x1E3, size: 0x8, addend: 0x0, symName: _dot, symObjAddr: 0x2F4, symBinAddr: 0x100003C58, symSize: 0x104 }
+  - { offsetInCU: 0x251, offset: 0x251, size: 0x8, addend: 0x0, symName: _randArray, symObjAddr: 0x3F8, symBinAddr: 0x100003D5C, symSize: 0xB0 }
+  - { offsetInCU: 0x2BF, offset: 0x2BF, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x4A8, symBinAddr: 0x100003E0C, symSize: 0xEC }
+...
