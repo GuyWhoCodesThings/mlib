@@ -26,6 +26,33 @@ matrix* createMatrix(int row, int col, bool transposed){
 	m->data = calloc(row * col, sizeof(TYPE));
 	return m;
 }
+
+matrix* eye(int row, int col){
+
+	matrix* identity = createMatrix(row, col, false);
+	for(int i = 0; i < row * col; i++){
+		if(i / row == i % col){
+			identity->data[i] = !identity->data[i];
+		}
+	}
+	return identity;
+
+}
+
+matrix* diag(TYPE* array, int length){
+
+	matrix* m = createMatrix(length, length, false);
+	int j = 0;
+	for(int i = 0; i < length * length; i++){
+		if(i / (length) == i % length){
+			m->data[i] = array[j];
+			j+=1;
+		}
+	}
+	return m;
+
+}
+
 matrix* toMatrix(TYPE* array, int row, int col, bool transposed){
 	matrix* m = createMatrix(row, col, transposed);
 	for(int i = 0; i < row * col; i++){
@@ -55,9 +82,17 @@ void show(matrix* m){
 		}
 	}
 }
+
+matrix* scalarProd(matrix* m, TYPE scalar){
+	matrix* scaled_m = createMatrix(m->row, m->col, false);
+	for(int i = 0; i < m->col * m->row; i++){
+		scaled_m->data[i] *= scalar;
+	}
+	return scaled_m;
+}
 // yxd yxd
-// [0,1,2]  [0,1]
-// [3,4,5]  [2,3]
+// [0,1,2]  [0,1] [0,1,2]
+// [3,4,5]  [2,3] [3,4,5]
 //			[4,5]
 
 
