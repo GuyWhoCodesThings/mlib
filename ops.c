@@ -50,7 +50,22 @@ matrix* diag(TYPE* array, int length){
 		}
 	}
 	return m;
+}
 
+matrix* add(matrix* m, matrix* n){
+	matrix* combined = createMatrix(m->row, m->col, false);
+	for(int i = 0; i < m->row * m->col; i++){
+		combined->data[i] = m->data[i] + n->data[i];
+	}
+	return combined;
+}
+
+matrix* sub(matrix* m, matrix* n){
+	matrix* combined = createMatrix(m->row, m->col, false);
+	for(int i = 0; i < m->row * m->col; i++){
+		combined->data[i] = m->data[i] - n->data[i];
+	}
+	return combined;
 }
 
 matrix* toMatrix(TYPE* array, int row, int col, bool transposed){
@@ -106,6 +121,4 @@ matrix* dot(matrix* m, matrix* n){
 		return res;
 	}
 	return NULL;
-	//xTy = yTx
-	
 }
